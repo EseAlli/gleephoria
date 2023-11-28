@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "./components/Footer";
 import localFont from "next/font/local";
+import Nav from "./components/Nav";
 
 export const metadata: Metadata = {
   title: "Gleephoria",
@@ -41,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ft.className} relative`}>
+        <Nav />
         {children}
         <Footer />
       </body>
