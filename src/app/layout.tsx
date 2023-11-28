@@ -27,6 +27,11 @@ const ft = localFont({
       style: "normal",
     },
     {
+      path: "./fonts/FuturaPTDemi.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
       path: "./fonts/FuturaPTBold.otf",
       weight: "700",
       style: "normal",

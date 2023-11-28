@@ -14,9 +14,9 @@ const Nav = () => {
         className="!h-4 !static !w-4 lg:!h-8 lg:!w-8 scale-[5.5] translate-x-8 md:pl-2"
       />
 
-      <div className="md:basis-2/3 flex w-full justify-between item-center md:text-lg lg:px-10">
+      <div className="md:basis-2/3 flex md:w-full justify-between item-center md:text-lg lg:px-10">
         <HiOutlineMenuAlt3 color="#e30b17" className="md:hidden" />
-        <ul className="hidden md:flex lg:gap-10 items-center">
+        <ul className="hidden md:flex gap-5 lg:gap-10 items-center">
           <li>
             <Link href="/">About us</Link>
           </li>
@@ -24,7 +24,7 @@ const Nav = () => {
             <Link href="/">Contact</Link>
           </li>
         </ul>
-        <button className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[50px] px-8 rounded-full font-bold">
+        <button className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[50px] px-8 rounded-full font-bold hidden md:block">
           Join the waitlist
         </button>
       </div>
