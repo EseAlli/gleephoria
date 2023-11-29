@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import linkedin from "../../../../public/ic_linkedin.svg";
-import whatsapp from "../../../../public/ic_whatsapp.svg";
-import facebook from "../../../../public/ic_facebook.svg";
-import twitter from "../../../../public/ic_twitter.svg";
+import linkedin from "../../../../../public/ic_linkedin.svg";
+import whatsapp from "../../../../../public/ic_whatsapp.svg";
+import facebook from "../../../../../public/ic_facebook.svg";
+import twitter from "../../../../../public/ic_twitter.svg";
 import Image from "next/image";
 
 const Footer = () => {

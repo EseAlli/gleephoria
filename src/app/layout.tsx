@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Footer from "./components/Footer";
+import Footer from "./components/base/Footer";
 import localFont from "next/font/local";
-import Nav from "./components/Nav";
+import Nav from "./components/base/Nav";
 
 export const metadata: Metadata = {
   title: "Gleephoria",

@@ -1,7 +1,7 @@
 import React from "react";
-import appStore from "../../../../public/app_store-btn.svg";
-import playStore from "../../../../public/play_store-btn.svg";
-import appPreview from "../../../../public/app_preview.svg";
+import appStore from "../../../../../public/app_store-btn.svg";
+import playStore from "../../../../../public/play_store-btn.svg";
+import appPreview from "../../../../../public/app_preview.svg";
 import Image from "next/image";
 
 const Header = () => {
