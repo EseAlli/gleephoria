@@ -5,12 +5,10 @@ import React, { useState, useEffect } from "react";
 import logo from "../../../../../public/logo_text.svg";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import useModal from "../Modal/useModal";
+import WaitListBtn from "../../fragments/waitlist/WaitListBtn";
 
 const Nav = () => {
   const [showNavbar, setShowNavbar] = useState(false);
-  const { openModal } = useModal();
-
   const handleNavbar = () => {
     setShowNavbar(!showNavbar);
   };
@@ -60,12 +58,7 @@ const Nav = () => {
             <Link href="/">Contact</Link>
           </li>
         </ul>
-        <button
-          className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[50px] px-8 rounded-full font-bold hidden md:block"
-          onClick={openModal}
-        >
-          Join the waitlist
-        </button>
+        <WaitListBtn className="!rounded-full hidden md:block" />
       </div>
     </nav>
   );

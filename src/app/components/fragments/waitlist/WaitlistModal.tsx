@@ -4,7 +4,7 @@ import logo from "../../../../../public/logo-transparent.svg";
 import Image from "next/image";
 import Input from "../../base/Input";
 import useModal from "../../base/Modal/useModal";
-import { jointWaitlist } from "@/services/waitlist";
+import { joinWaitlist, sendEmail } from "@/services/waitlist";
 
 type WaitlistModalProps = {
   isModalOpen: boolean;
@@ -22,34 +22,35 @@ const SendIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="currentColor"
       aria-hidden="true"
       className="h-6 w-6 text-white"
     >
       <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
       ></path>
     </svg>
   );
 };
 
-const WaitlistModal = () => {
-  const { isModalOpen, openModal, closeModal } = useModal();
+const WaitlistModal = (props: WaitlistModalProps) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState<Message>();
 
   const addToWaitList = async (e: any) => {
     e.preventDefault();
-    const response: any = await jointWaitlist(email);
+    const response: any = await joinWaitlist(email);
     if (response?.message === "success") {
       setEmail("");
       setMessage({
         type: "success",
         text: "You've been added to the waitlist, check your mail!",
       });
+      const res: any = await sendEmail(email);
+      console.log(res);
     } else {
       setMessage({
         type: "error",
@@ -58,7 +59,7 @@ const WaitlistModal = () => {
     }
   };
   return (
-    <Modal isOpen={true} onClose={closeModal}>
+    <Modal isOpen={props.isModalOpen} onClose={props.closeModal}>
       <div className="min-w-[450px]">
         <div className="max-w-sm flex flex-col items-center text-center mx-auto">
           <Image src={logo} alt="Logo" width={60} height={60} />
@@ -78,8 +79,9 @@ const WaitlistModal = () => {
               type="email"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
-            {message?.type && <p>{message?.text}</p>}
+            {message?.type && <p className="text-sm my-1">{message?.text}</p>}
           </form>
         </div>
       </div>
@@ -88,11 +90,3 @@ const WaitlistModal = () => {
 };
 
 export default WaitlistModal;
-
-// export const WaitListBtn = () =>{
-//     return(
-//         <button className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[70px] px-8 rounded-xl font-bold min-h-[64px] text-lg w-full md:w-fit">
-//             Join the waitlist
-//           </button>
-//     )
-// };

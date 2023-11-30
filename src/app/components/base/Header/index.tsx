@@ -4,6 +4,7 @@ import playStore from "../../../../../public/play_store-btn.svg";
 import appPreview from "../../../../../public/app_preview.svg";
 import Image from "next/image";
 import useModal from "../Modal/useModal";
+import WaitListBtn from "../../fragments/waitlist/WaitListBtn";
 
 const Header = () => {
   const { openModal } = useModal();
@@ -30,12 +31,7 @@ const Header = () => {
             height={120}
           />
         </div>
-        <button
-          className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[50px] px-8 rounded-full font-bold md:hidden block mt-6"
-          onClick={openModal}
-        >
-          Join the waitlist
-        </button>
+        <WaitListBtn className="!rounded-full md:hidden mt-6" />
       </div>
       <div className="mt-14">
         <Image src={appPreview} alt="Gleephoria App" width={850} height={850} />

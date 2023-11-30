@@ -12,6 +12,7 @@ type InputProps = {
   type: HTMLInputTypeAttribute;
   name: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  value: HTMLInputTypeAttribute;
 };
 
 const Input = (props: InputProps) => {
@@ -23,6 +24,7 @@ const Input = (props: InputProps) => {
         className="py-4 text-sm rounded-full w-full pr-10 focus:outline-none focus:bg-white focus:text-gray-900"
         placeholder={props?.placeholder}
         onChange={props.onChange}
+        value={props.value}
       />
       {props.icon && (
         <span className="absolute inset-y-0 right-0 flex items-center pl-2">

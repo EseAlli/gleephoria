@@ -1,8 +1,7 @@
 import React from "react";
-import useModal from "../../base/Modal/useModal";
+import WaitListBtn from "../../fragments/waitlist/WaitListBtn";
 
 const Waitlist = () => {
-  const { openModal } = useModal();
   return (
     <section className="min-h-[600px] flex items-center">
       <div className="container mx-auto flex flex-col md:flex-row justify-between px-6 md:px-0">
@@ -26,12 +25,7 @@ const Waitlist = () => {
               "That's why we've created a dating platform that is designed to help you connect with individuals who share your interests, values, and lifestyle."
             }
           </p>
-          <button
-            className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[70px] px-8 rounded-xl font-bold min-h-[64px] text-lg w-full md:w-fit"
-            onClick={openModal}
-          >
-            Join the waitlist
-          </button>
+          <WaitListBtn />
         </div>
       </div>
     </section>
