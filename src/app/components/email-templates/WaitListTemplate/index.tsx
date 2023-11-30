@@ -9,5 +9,6 @@ export const WaitListEmailTemplate: React.FC<
 > = ({ firstName }) => (
   <div>
     <h1>Welcome, {firstName}!</h1>
+    <p>You have been added to the Waitlist for Gleephoria</p>
   </div>
 );
