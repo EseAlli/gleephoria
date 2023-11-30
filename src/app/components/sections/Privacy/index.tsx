@@ -7,18 +7,18 @@ import incognito from "../../../../../public/ic_incognito.svg";
 
 const Privacy = () => {
   return (
-    <section className="min-h-[800px] flex justify-center bg-white items-center">
-      <div className="pt-10 bg-[#FFF3E1]  rounded-3xl h-fit">
-        <div className="max-w-[85%] flex items-center  mx-auto ">
+    <section className="min-h-[950px] md:min-h-[800px] flex justify-center bg-white items-center container mx-auto max-w-none md:max-w-[90%]">
+      <div className="pt-20 md:pt-10 bg-[#FFF3E1] md:rounded-3xl h-fit">
+        <div className="max-w-[85%] flex flex-col md:flex-row items-center mx-auto ">
           <div>
-            <h3 className="lg:text-3xl font-bold leading-relaxed">
+            <h3 className="text-2xl lg:text-3xl font-bold leading-relaxed">
               Prioritizing your privacy.
             </h3>
-            <p className="font-light text-xl leading-relaxed max-w-[90%]">
+            <p className="font-light lg:text-xl leading-relaxed max-w-[90%]">
               Gleephoria has amazing features that enhances your privacy and
               tailors the best experience for you.
             </p>
-            <ul className="mt-6 text-xl grid gap-3.5">
+            <ul className="mt-6 lg:text-xl grid gap-3.5 md:gap-1 lg:gap-3.5">
               <li className="flex items-center gap-2">
                 <Image src={encryption} alt="End to end-encryption" />
                 <span>End to end-encryption</span>
@@ -33,8 +33,8 @@ const Privacy = () => {
               </li>
             </ul>
           </div>
-          <div>
-            <Image src={guy} alt="guy" />
+          <div className="mt-8 md:mt-0">
+            <Image src={guy} alt="guy" height={400} width={400} />
           </div>
         </div>
       </div>

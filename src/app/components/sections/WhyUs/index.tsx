@@ -5,7 +5,7 @@ import whyUs from "../../../../../public/why_us.svg";
 const WhyUs = () => {
   return (
     <section className="min-h-[700px]">
-      <div className="container mx-auto flex items-center justify-between px-4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-0">
         <div className="self-start">
           <p className="font-ligh">Why Us</p>
           <h3 className="text-3xl font-bold mt-2 mb-6 leading-relaxed">
@@ -21,8 +21,14 @@ const WhyUs = () => {
             a journey worth taking
           </p>
         </div>
-        <div>
-          <Image src={whyUs} alt="Why Us?" height={550} width={550} />
+        <div className="mt-8 md:mt-0">
+          <Image
+            src={whyUs}
+            alt="Why Us?"
+            height={550}
+            width={550}
+            className="md:max-w-xs xl:max-w-full"
+          />
         </div>
       </div>
     </section>

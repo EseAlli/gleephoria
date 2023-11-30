@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="container mx-auto px-4 w-full flex flex-col items-center justify-center min-h-screen py-16 lg:py-24">
-      <h1 className="text-netural-800 text-2xl md:text-[38px] max-w-xl font-bold text-center !leading-[3.625rem]">
+    <header className="container mx-auto px-4 w-full flex flex-col items-center justify-center md:min-h-screen py-16 lg:py-24 min-h-[600px]">
+      <h1 className="text-netural-800 text-2xl md:text-[38px] max-w-xl font-bold text-center leading-loose md:!leading-[3.625rem]">
         Unlock the Magic of Love at{" "}
         <span className="text-orange-500">Glephoria</span>: Where Connections
         Spark and Hearts Soar!
@@ -28,11 +28,14 @@ const Header = () => {
             height={120}
           />
         </div>
+        <button className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[50px] px-8 rounded-full font-bold md:hidden block mt-6">
+          Join the waitlist
+        </button>
       </div>
       <div className="mt-14">
         <Image src={appPreview} alt="Gleephoria App" width={850} height={850} />
         <div className="max-w-2xl ml-auto my-8 flex flex-col gap-6 items-end">
-          <div className="border-2 border-red-700 w-72"></div>
+          <div className="border-2 border-red-700 w-36 md:w-72"></div>
           <p className="text-center font-light md:text-xl !leading-relaxed text-neutral-400">
             {
               "At Gleephoria, we believe that finding your soulmate is a journey worth taking. That's why we've created a dating platform that is designed to help you connect with individuals who share your interests, values, and lifestyle."
