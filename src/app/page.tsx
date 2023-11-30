@@ -5,8 +5,6 @@ import Privacy from "./components/sections/Privacy";
 import Features from "./components/sections/Features";
 import WhyUs from "./components/sections/WhyUs";
 import Waitlist from "./components/sections/Waitlist";
-import WaitlistModal from "./components/fragments/waitlist/WaitlistModal";
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
@@ -16,7 +14,6 @@ export default function Home() {
       <Features />
       <WhyUs />
       <Waitlist />
-      <WaitlistModal />
     </main>
   );
 }
