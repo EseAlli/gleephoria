@@ -3,8 +3,10 @@ import appStore from "../../../../../public/app_store-btn.svg";
 import playStore from "../../../../../public/play_store-btn.svg";
 import appPreview from "../../../../../public/app_preview.svg";
 import Image from "next/image";
+import useModal from "../Modal/useModal";
 
 const Header = () => {
+  const { openModal } = useModal();
   return (
     <header className="container mx-auto px-4 w-full flex flex-col items-center justify-center md:min-h-screen py-16 lg:py-24 min-h-[600px]">
       <h1 className="text-netural-800 text-2xl md:text-[38px] max-w-xl font-bold text-center leading-loose md:!leading-[3.625rem]">
@@ -28,7 +30,10 @@ const Header = () => {
             height={120}
           />
         </div>
-        <button className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[50px] px-8 rounded-full font-bold md:hidden block mt-6">
+        <button
+          className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-3.5 min-w-[50px] px-8 rounded-full font-bold md:hidden block mt-6"
+          onClick={openModal}
+        >
           Join the waitlist
         </button>
       </div>

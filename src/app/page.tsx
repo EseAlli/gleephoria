@@ -1,10 +1,11 @@
-import Image from "next/image";
+"use client";
 import Header from "./components/base/Header";
 import About from "./components/sections/About";
 import Privacy from "./components/sections/Privacy";
 import Features from "./components/sections/Features";
 import WhyUs from "./components/sections/WhyUs";
 import Waitlist from "./components/sections/Waitlist";
+import WaitlistModal from "./components/fragments/waitlist/WaitlistModal";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Features />
       <WhyUs />
       <Waitlist />
+      <WaitlistModal />
     </main>
   );
 }
