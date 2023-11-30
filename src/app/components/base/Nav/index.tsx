@@ -7,24 +7,33 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import WaitListBtn from "../../fragments/waitlist/WaitListBtn";
 
+interface Size {
+  width: number;
+  height: number;
+}
+
 const Nav = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+  const [size, setSize] = useState<Size>();
   const handleNavbar = () => {
+    console.log("clicked");
     setShowNavbar(!showNavbar);
   };
 
-  const handleResize = () => {
-    console.log("running");
-    if (window.innerWidth < 768) {
-      setShowNavbar(false);
-    } else {
-      setShowNavbar(true);
-    }
+  const resizeHandler = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    width < 768 ? setShowNavbar(false) : setShowNavbar(true);
+    setSize({
+      width: width,
+      height: height,
+    });
   };
 
   useEffect(() => {
-    document.addEventListener("resize", handleResize, false);
-    return () => document.removeEventListener("resize", handleResize);
+    resizeHandler();
+    document.addEventListener("resize", resizeHandler, false);
+    return () => document.removeEventListener("resize", resizeHandler);
   }, []);
   return (
     <nav className="bg-white flex justify-between p-4 md:p-8 items-center relative">
@@ -44,7 +53,7 @@ const Nav = () => {
           />
         )}
         <ul
-          className={`hidden flex-col md:flex-row gap-5 lg:gap-10 h-screen md:h-fit bg-white absolute right-0 min-w-[180px] md:min-w-none px-4 md:px-0 py-4 md:py-0 md:relative items-center self-center ${
+          className={`hidden flex-col md:flex-row gap-5 lg:gap-10 min-h-screen md:min-h-fit bg-white absolute top-0 -right-1 min-w-[200px] md:min-w-none px-4 md:px-0 py-4 md:py-0 md:relative items-center self-center z-10 ${
             showNavbar && "!flex"
           }`}
         >
